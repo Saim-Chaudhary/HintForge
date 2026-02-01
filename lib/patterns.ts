@@ -1,0 +1,48 @@
+// Common DSA patterns for consistent identification
+export const COMMON_PATTERNS = [
+  'Two Pointers',
+  'Sliding Window',
+  'Binary Search',
+  'DFS',
+  'BFS',
+  'Dynamic Programming',
+  'Greedy',
+  'Backtracking',
+  'Divide and Conquer',
+  'Hash Map',
+  'Stack',
+  'Queue',
+  'Heap',
+  'Trie',
+  'Union Find',
+  'Linked List',
+  'Tree Traversal',
+  'Graph',
+  'Sorting',
+  'Bit Manipulation',
+] as const;
+
+export type Pattern = typeof COMMON_PATTERNS[number];
+
+export const PATTERN_DESCRIPTIONS: Record<string, string> = {
+  'Two Pointers': 'Use two pointers moving toward each other or in the same direction',
+  'Sliding Window': 'Maintain a window of elements that satisfies certain conditions',
+  'Binary Search': 'Search in a sorted array by repeatedly dividing the search interval',
+  'DFS': 'Depth-First Search: explore as far as possible along each branch',
+  'BFS': 'Breadth-First Search: explore all neighbors at present depth before moving deeper',
+  'Dynamic Programming': 'Break down problem into overlapping subproblems and store results',
+  'Greedy': 'Make locally optimal choices at each step',
+  'Backtracking': 'Try all possibilities by exploring and abandoning paths',
+  'Divide and Conquer': 'Break problem into smaller subproblems and combine solutions',
+  'Hash Map': 'Use hash table for O(1) lookups and storage',
+  'Stack': 'LIFO data structure for tracking elements',
+  'Queue': 'FIFO data structure for processing elements in order',
+  'Heap': 'Priority queue for efficient min/max operations',
+  'Trie': 'Tree-based data structure for prefix matching',
+  'Union Find': 'Disjoint set data structure for connectivity problems',
+  'Linked List': 'Sequential data structure with nodes and pointers',
+  'Tree Traversal': 'Visit all nodes in a tree (inorder, preorder, postorder)',
+  'Graph': 'Represent and traverse graph structures',
+  'Sorting': 'Arrange elements in a particular order',
+  'Bit Manipulation': 'Use bitwise operations for efficient computations',
+};
