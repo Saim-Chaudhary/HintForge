@@ -32,7 +32,7 @@ export const analyzeSolutionSchema = z.object({
     .max(10000, 'Code cannot exceed 10,000 characters')
     .trim(),
   language: z.enum(['javascript', 'typescript', 'python', 'java', 'cpp', 'c', 'go', 'rust', 'other'], {
-    errorMap: () => ({ message: 'Invalid language' }),
+    message: 'Invalid language',
   }),
   sessionId: z.string().min(1, 'Session ID is required'),
 });
@@ -58,7 +58,7 @@ export function validate<T>(
   } catch (error) {
     if (error instanceof z.ZodError) {
       const details: Record<string, string[]> = {};
-      error.errors.forEach((err) => {
+      error.issues.forEach((err) => {
         const path = err.path.join('.');
         if (!details[path]) {
           details[path] = [];
@@ -68,7 +68,7 @@ export function validate<T>(
 
       return {
         success: false,
-        error: error.errors[0]?.message || 'Validation error',
+        error: error.issues[0]?.message || 'Validation error',
         details,
       };
     }
