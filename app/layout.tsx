@@ -4,6 +4,7 @@ import "./globals.css";
 import { SessionProvider } from "@/components/SessionProvider";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -35,6 +36,7 @@ export default function RootLayout({
             <Footer />
           </div>
         </SessionProvider>
+        <SpeedInsights />
       </body>
     </html>
   );
