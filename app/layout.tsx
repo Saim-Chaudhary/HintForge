@@ -15,6 +15,9 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "HintForge - AI-Powered Coding Interview Practice",
   description: "Master data structures and algorithms with AI-guided hints and personalized feedback",
+  verification: {
+    google: "0JB0h93hnnDfUCF86gZqPGv5PYLowd_TK27BKSuHlqg",
+  },
 };
 
 export default function RootLayout({
