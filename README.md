@@ -1,37 +1,15 @@
-# HintForge - AI-Powered Coding Interview Practice
+# HintForge - AI-Powered DSA Learning Platform
 
-An intelligent learning platform that helps you master data structures and algorithms through AI-guided hints, pattern recognition, and personalized feedback.
+Master data structures and algorithms through AI-guided progressive hints, intelligent pattern recognition, and personalized feedback. Learn by thinking, not by copying solutions.
 
-## 🚀 Project Status
+## ✨ Features
 
-**Phase 1: Project Setup & Base Layout - ✅ COMPLETED**
-
-### What's Been Built
-
-#### 1. **Project Infrastructure**
-- ✅ Next.js 16 with TypeScript and Tailwind CSS
-- ✅ App Router architecture
-- ✅ ESLint configuration
-- ✅ Proper folder structure (`/app`, `/components`, `/lib`, `/types`)
-
-#### 2. **Core Configuration**
-- ✅ Environment variables template (`.env.local.example` and `.env.local`)
-- ✅ Supabase client and server setup (SSR-ready)
-- ✅ TypeScript type definitions for all data structures
-- ✅ Utility functions and helpers
-
-#### 3. **UI Foundation**
-- ✅ Root layout with navigation
-- ✅ Session management context (anonymous user support)
-- ✅ Responsive navigation component
-- ✅ Landing page with features and how-it-works sections
-- ✅ Dark mode support (respects system preference)
-
-#### 4. **Design System**
-- ✅ Tailwind utility classes
-- ✅ Color scheme (Blue primary, with dark mode variants)
-- ✅ Pattern badge colors
-- ✅ Difficulty level colors (Easy/Medium/Hard)
+- 🎯 **Progressive Hint System**: Get 5 levels of hints from guiding questions to implementation strategies
+- 🤖 **AI Pattern Recognition**: Automatically identifies algorithmic patterns in your problems
+- 📊 **Detailed Code Analysis**: Receive comprehensive feedback on time/space complexity
+- 📈 **Progress Tracking**: Monitor your learning journey and pattern mastery
+- 🎨 **Beautiful Dark UI**: Easy on the eyes during long coding sessions
+- 🔓 **100% Free**: Built with free AI models (OpenRouter + Nvidia Nemotron)
 
 ## 🏗️ Architecture Overview
 
@@ -59,166 +37,98 @@ dsa-tool/
     └── system-plan.md      # Complete technical spec ✅
 ```
 
-## 🛠️ Technology Stack
+## 🛠️ Tech Stack
 
-- **Frontend**: Next.js 16 (App Router), React, TypeScript, Tailwind CSS
-- **Backend**: Next.js API Routes
-- **Database**: Supabase (PostgreSQL with RLS)
-- **AI**: OpenRouter API (free models: Llama 3.1, Gemini Flash, Mistral)
-- **Auth**: Supabase Auth (optional, anonymous mode supported)
-- **Deployment**: Vercel (recommended)
+- **Framework**: Next.js 16 (App Router) + TypeScript
+- **Styling**: Tailwind CSS
+- **Database**: Supabase (PostgreSQL)
+- **AI**: OpenRouter API (Nvidia Nemotron)
+- **Deployment**: Vercel
 
 ## 📋 Prerequisites
+Setup
 
-Before you begin, ensure you have:
-- Node.js 18+ installed
-- A Supabase account (sign up at [supabase.com](https://supabase.com))
-- An OpenRouter API key (sign up at [openrouter.ai](https://openrouter.ai))
+### Prerequisites
+- Node.js 18+
+- [Supabase account](https://supabase.com) (free tier)
+- [OpenRouter API key](https://openrouter.ai) (free tier
+### Installation
 
-## 🚀 Getting Started
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Saim-Chaudhary/HintForge.git
+   cd HintForge
+   ```
 
-### 1. Install Dependencies
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-```bash
-npm install
-```
+3. **Set up environment variables**
+   
+   Create a `.env.local` file in the root directory:
+   ```env
+   # Supabase
+   NEXT_PUBLIC_SUPABASE_URL=your-supabase-url
+   NEXT_PUBLIC_SUPABASE_ANON_KEY=your-supabase-anon-key
+   SUPABASE_SERVICE_ROLE_KEY=your-service-role-key
+   
+   # OpenRouter
+   OPENROUTER_API_KEY=your-openrouter-api-key
+   OPENROUTER_BASE_URL=https://openrouter.ai/api/v1
+   OPENROUTER_MODEL=nvidia/nemotron-3-nano-30b-a3b:free
+   
+   # App
+   NEXT_PUBLIC_APP_URL=http://localhost:3000
+   ```
 
-### 2. Configure Environment Variables
+4. **Set up Supabase database**
+   
+   Run the SQL migrations in your Supabase SQL editor (found in `/supabase/migrations/`):
+   - `001_create_tables.sql`
+   - `002_create_indexes.sql`
+   - `003_enable_rls.sql`
 
-Copy the example environment file:
+5. **Run the development server**
+   ```bash
+   npm run dev
+   ```
 
-```bash
-cp .env.local.example .env.local
-```
+6. **Open [http://localhost:3000](http://localhost:3000)** in your browser
 
-Edit `.env.local` and fill in your credentials:
+## 🚀 Deployment
 
-```env
-# Supabase Configuration
-NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
-SUPABASE_SERVICE_ROLE_KEY=your-service-role-key
+Deploy to Vercel with one click:
 
-# OpenRouter API
-OPENROUTER_API_KEY=your-openrouter-api-key
-OPENROUTER_MODEL=meta-llama/llama-3.1-8b-instruct:free
-```
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Saim-Chaudhary/HintForge)
 
-### 3. Set Up Supabase Database
+**Important**: Add all environment variables in Vercel project settings before deploying.
 
-Run the SQL migrations from `/docs/system-plan.md` in your Supabase SQL editor:
-- Create tables: `users`, `problem_sessions`, `hints`, `solution_attempts`, `user_stats`
-- Enable Row Level Security (RLS)
-- Create indexes for performance
+See [DEPLOYMENT.md](DEPLOYMENT.md) for detailed deployment instructions.
 
-### 4. Run Development Server
+## 📖 Usage
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+1. **Enter a problem**: Paste any DSA problem statement
+2. **Get analysis**: AI identifies patterns, constraints, and difficulty
+3. **Request hints**: Unlock 5 progressive levels of hints
+4. **Submit solution**: Get detailed feedback on your code
+5. **Track progress**: View your history and pattern mastery
 
-Open [http://localhost:3000](http://localhost:3000) to see the landing page.
+## 🤝 Contributing
 
-## 🎯 Features (Planned)
-
-### Core Features
-- **Problem Analysis**: AI identifies patterns, constraints, and difficulty
-- **Progressive Hints**: 5 levels of hints from guiding questions to pseudocode
-- **Code Review**: Detailed feedback with complexity analysis
-- **Pattern Recognition**: Learn 20+ algorithmic patterns
-- **Progress Tracking**: Monitor your improvement over time
-- **Anonymous Mode**: Use without creating an account
-
-### AI Guardrails
-- System prompts prevent solution dumping
-- Sequential hint unlocking
-- Response filtering for code blocks
-- Temperature control (0.7 for hints, 0.3 for analysis)
-
-## 🗂️ Next Steps (Implementation Order)
-
-### Phase 2: AI Service Layer
-- [ ] Create OpenRouter client wrapper
-- [ ] Implement AI service with prompt templates
-- [ ] Add safeguard functions (containsCodeSolution, etc.)
-- [ ] Build hint progression logic
-
-### Phase 3: Backend API Routes
-- [ ] `/api/analyze-problem` - Problem analysis
-- [ ] `/api/get-hint` - Progressive hint delivery
-- [ ] `/api/analyze-solution` - Code review
-- [ ] `/api/session` - Session management
-- [ ] `/api/history` - Problem history
-- [ ] `/api/patterns/stats` - Pattern analytics
-
-### Phase 4: Frontend Components
-- [ ] `ProblemInput.tsx` - Problem statement input
-- [ ] `ProblemAnalysis.tsx` - Display analysis results
-- [ ] `HintSystem.tsx` - Progressive hint UI
-- [ ] `CodeEditor.tsx` - Monaco or textarea-based editor
-- [ ] `SolutionFeedback.tsx` - Display AI feedback
-- [ ] `PatternBadge.tsx` - Visual pattern tags
-
-### Phase 5: Pages & Integration
-- [ ] `/problem` page - Main problem-solving interface
-- [ ] `/history` page - Past problems list
-- [ ] `/patterns` page - Pattern insights dashboard
-- [ ] Connect all components to API
-
-### Phase 6: Polish & Deploy
-- [ ] Error handling and loading states
-- [ ] Mobile responsive design
-- [ ] Toast notifications
-- [ ] Deploy to Vercel
-- [ ] Monitor usage and costs
-
-## 📖 Key Design Decisions
-
-1. **Anonymous-First**: Users can start immediately without authentication
-2. **Session-Based Tracking**: UUID stored in sessionStorage for anonymous users
-3. **Free Tier**: Uses free OpenRouter models (Llama 3.1, Gemini Flash, Mistral)
-4. **No Solution Dumping**: Multiple safeguards prevent AI from giving away answers
-5. **Progressive Disclosure**: Hints unlock sequentially to encourage learning
-6. **Pattern Library**: Predefined list of 20+ patterns for consistency
-
-## 🔒 Security Notes
-
-- RLS policies protect user data in Supabase
-- Service role key never exposed to frontend
-- Rate limiting prevents API abuse (20 req/min)
-- Input validation on all user-submitted content
-
-## 📚 Documentation
-
-- Full technical specification: [docs/system-plan.md](docs/system-plan.md)
-- Database schema with migrations included
-- API endpoint specifications
-- AI prompt templates and guardrails
+Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## 📄 License
 
-MIT License - feel free to use this for learning purposes.
+This project is open source and available under the MIT License.
 
-## 🎓 Learning Resources
+## 🙏 Acknowledgments
 
-This project demonstrates:
-- Next.js App Router architecture
-- TypeScript best practices
-- Supabase integration with RLS
-- AI prompt engineering
-- Progressive web app patterns
-- Session management without auth
+- Built with [Next.js](https://nextjs.org/)
+- AI powered by [OpenRouter](https://openrouter.ai/)
+- Database by [Supabase](https://supabase.com/)
 
 ---
 
-**Current Status**: Phase 1 Complete ✅ | Development Server Running on http://localhost:3000
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Made with ❤️ by [Saim Chaudhary](https://github.com/Saim-Chaudhary)
